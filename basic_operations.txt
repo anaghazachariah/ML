@@ -41,6 +41,8 @@
 #To get a subset of dataset with unique values of column 'COL' and how often they occur
 
     sub_df=df.COL.value_counts()
+        or
+    sub_df=df.groupby('COL).COL.count()
     
 #To get summary of data
 
@@ -133,3 +135,36 @@
 #To assign elements of list as elemnts of column 'COL'
 
     df['COL']=[1,2,3]
+
+#To subtract x  for all elements in the column named COL without modifying orginal data
+
+    sub_df=df.COL.map(lambda n:n -x)
+        or
+    def subtracts(row):
+        row.COL=row.COL-x
+        return row
+    sub_df=df.apply(subtracts,axis='columns')
+        or
+    sub_df=df.COL-x
+
+#To concatinate a string with all values in column
+
+    sub_df=df.COL+'new_string'
+
+#To concatinate another column values with current column
+
+    sub_df=df.COL1+"-"+df.COL2
+
+#To copy dataframe to another dataframe
+
+    copied_df=df
+
+#To calculate median
+
+    calculated_median=df.COL.median()
+
+#To calculate unique value in COL1 and to get minimum value of COL2 correspond to each gropu in COL1
+
+    sub_df=df.gropuby('COL1).C0L2.min()  # cheapest COL2 in each COL1 value category
+
+
