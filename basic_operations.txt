@@ -1,0 +1,135 @@
+#To read data using pandas to a variable df
+
+    df = pd.read_csv(file_path)
+
+#To get all columns in dataset as list
+
+    column_names=list(df.columns.values)
+
+#To get value of cell in p'th row and having column name 'COL' and store it in variable n
+
+    n=df.iloc[p]['COL']
+        or
+    n=df['COL'][p]
+        or
+    n=df.loc[p,'COL]
+        or
+    n=df.COL.iloc[p]
+
+#To get all values in column named 'COL' as a list to variable n
+
+    n=df['COL'].tolist()
+
+#To get a subser of dataframe with single column names 'COL'
+
+    sub_df=df.COL
+        or
+    sub_df=df['COL']
+
+#To get average of values in column named 'COL' to variable n
+
+    n=df["COL"].mean()
+        or
+    n=df.COL.mean()
+
+#To get unique values in column as a list
+
+    unique_vals=df['COL'].unique()
+        or
+    unique_vals=df.COL.unique()
+
+#To get a subset of dataset with unique values of column 'COL' and how often they occur
+
+    sub_df=df.COL.value_counts()
+    
+#To get summary of data
+
+    df.describe()
+
+#To get summary of each column 'COL'
+
+    df.COL.describe()
+
+#To get first 5 entries in data frame
+
+    df.head()
+
+#To drop all missing values in data
+
+    df=df.dropna(axis=0)
+
+#To replace all missing values with 'missing'
+
+    df.fillna('missing', inplace=True)
+
+#To get size of dataframe
+
+    df.shape
+
+#For not having a dedicated column for index
+
+    df=pd.read_csv('FILE_PATH',index_col=0)
+
+#To create a dataframe with column 'Yes' having values 50 and 21 and column 'np' having 131 and 2
+
+    df=pd.DataFrame({'Yes': [50, 21], 'No': [131, 2]})
+
+#To specify index
+
+    df=pd.DataFrame({'Bob': ['I liked it.', 'It was awful.'], 'Sue': ['Pretty good.', 'Bland.']},index=['Product A', 'Product B'])
+
+#To select n'th row 
+
+    sub_df=df.iloc[n]
+
+#To get n'th column
+
+    sub_df=df.iloc[:,0]
+
+#To get values of m'th column of first n rows
+
+    sub_df=df.iloc[:n,m]
+
+#To get values of m'th column of p to q rows
+
+    sub_df=df.iloc[p:q,m]
+
+#To get values of m'th column for a given list of rows [0,1,2,3]
+
+    sub_df==df.iloc[[0,1,2,3],m]
+
+#To get last 5 elements in dataset
+
+    sub_df=df.iloc[-5:]
+
+#To get values of list of columns ['P','Q','R]
+
+    sub_df=df.loc[:,['P','Q','R]]
+
+#To make given column as index
+
+    df..set_index('COL')
+
+#To get rows with column 'COL' having value 'm'
+
+    sub_df=df.loc[df.COL == 'm']
+
+#To get rows with column 'COL1' having value 'm' and 'COL2' having value 'n' 
+
+    sub_df=df.loc[(df.COL1 == 'm') & (df.COL2=='n)]
+
+#To get rows with column 'COL' have value in ['P','Q','R']
+
+    sub_df=df.loc[df.COL.isin(['P','Q','R'])]
+
+#To get rows with values of COL is not null  
+
+    sub_df=df.loc[df.COL.notnull()]
+
+#To assign a value for colum COL
+
+    df['COL']=value
+
+#To assign elements of list as elemnts of column 'COL'
+
+    df['COL']=[1,2,3]
