@@ -64,6 +64,14 @@
 
     df.fillna('missing', inplace=True)
 
+#To select rows with missing values in COL
+
+    sub_df=df[pd.isnull(df.COL)]
+
+#To fill missing values of a column
+
+    sub_df=df.COL.fillna('missing')
+
 #To get size of dataframe
 
     df.shape
@@ -167,4 +175,50 @@
 
     sub_df=df.gropuby('COL1).C0L2.min()  # cheapest COL2 in each COL1 value category
 
+#To rename COL1 as COL2
+
+    df.rename(columns={'COL1':'COL2'})
+
+#To rename 0th element as firth and 1'st elemnt as second in index
+
+    df.rename(index={0:'first',1:'second'})
+
+#To concatinate 2 datasets
+
+    df3=pd.concatinate([df1,df2])
+
+#Inner join between 2 datasets on column COL
+
+    df3=pd.merge(df1,df2,on='COL',how='inner')
+        or
+     df3=pd.merge(df1, df2,  how='inner', left_on=['df1_COL1','df1_COL2'], right_on = ['df1_COL1','df2_COL2'])
+
+#Left join between 2 datasets on column COL
+
+    df3=pd.merge(df1,df2,on='COL',how='left')
+        or
+     df3=pd.merge(df1, df2,  how='left', left_on=['df1_COL1','df1_COL2'], right_on = ['df1_COL1','df2_COL2'])
+
+#Right join between 2 datasets on column COL
+
+    df3=pd.merge(df1,df2,on='COL',how='right')
+        or
+    df3=pd.merge(df1, df2,  how='right', left_on=['df1_COL1','df1_COL2'], right_on = ['df1_COL1','df2_COL2'])
+
+#To get type of COL
+
+    df.COL.dtype
+
+#To get type of all columns
+
+    df.types
+
+#To convert a column type to float64
+
+    df.COL.astype('float64')
+
+#To replace value x with y 
+
+    df.COL.replace('x','y')
+    
 
