@@ -6,6 +6,10 @@
 
     column_names=list(df.columns.values)
 
+#To get m to n rows
+
+    sub_df=df[m:n]
+
 #To get value of cell in p'th row and having column name 'COL' and store it in variable n
 
     n=df.iloc[p]['COL']
@@ -245,3 +249,15 @@
 #To save dataset
 
     df.to_csv('file_name.csv')
+
+#To convert values in COL to lower case 
+
+    df['COL']=df['COL'].str.lower()
+
+#To remove starting and ending white spaces in column values
+
+    df['COL']=df['COL'].str.strip()
+
+#To scale data in orginal_data, between 0 and 1
+
+    scaled_data=minmax_scaling(orginal_data_list,columns=[0])

@@ -1,0 +1,28 @@
+#To drop all missing values in data
+
+    df=df.dropna(axis=0)
+
+#To replace all missing values with 'missing'
+
+    df.fillna('missing', inplace=True)
+
+#To select rows with missing values in COL
+
+    sub_df=df[pd.isnull(df.COL)]
+
+#To fill missing values of a column
+
+    sub_df=df.COL.fillna('missing')
+
+#To see missing values in each columns
+
+    sub_df=df.isnull().sum()
+
+#To remove all columns with atleast 1 missing values
+
+    sub_df=df.dropna(axis=1)
+
+# replace all NA's the value that comes directly after it in the same column, then replace all the remaining na's with 0
+
+    df.fillna(method='bfill',axis=0).fillna(0)
+
