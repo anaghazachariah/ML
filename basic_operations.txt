@@ -220,5 +220,28 @@
 #To replace value x with y 
 
     df.COL.replace('x','y')
-    
 
+#To reset dataset back to orginal index
+
+    sub_df=df.reset_index()
+
+#To sort dataset based on COL
+
+    sub_df=df.sort_values(by='COL')
+
+#To sort dataset based on COL in descending order
+
+    sub_df=df.sort_values(by='COL', ascending=False)
+
+#To sort index
+
+    sub_df=df.sort_index()
+
+
+#To sort dataset by more than 1 column
+
+    df.sort_values(by=['COL1','COL2]) #first groupby col1 and then sort each group by COL2
+
+#To save dataset
+
+    df.to_csv('file_name.csv')
