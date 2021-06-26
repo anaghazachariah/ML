@@ -1,0 +1,4 @@
+three approaches to dealing with missing values
+->drop columns with missing values
+->Imputation:fill missing values with a number eg:mean
+->impute the missing values, as before. And, additionally, for each column with missing entries in the original dataset, we add a new column that shows the location of the imputed entries
